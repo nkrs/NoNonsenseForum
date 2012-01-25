@@ -31,7 +31,7 @@ if (CAN_POST && AUTH && TITLE && TEXT) {
 		//has the added benefit of converting “microsoft's” to “microsofts” instead of “microsoft_s”
 		str_replace (array ("'", "`", "^", "~", "'", '"'), '', strtolower (
 			//unaccent: <php.net/manual/en/function.iconv.php>
-			iconv ('UTF-8', 'US-ASCII//IGNORE//TRANSLIT', TITLE)
+			iconv ('UTF-8', 'US-ASCII//IGNORE//TRANSLIT', transliterate (TITLE))
 		))
 	);
 	
